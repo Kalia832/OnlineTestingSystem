@@ -1,0 +1,26 @@
+{% extends "headerandfooter.html"%}
+{% block title %}ots-result{% endblock %}
+
+{% block content %}
+<p>Welcome to online testing system</p>
+<table>
+    <tr>
+        <th style="border: 5px black;">Time</th>
+        <th style="border: 5px black;">Attempt</th>
+        <th style="border: 5px black;">Date</th>
+        <th style="border: 5px black;">Right</th>
+        <th style="border: 5px black;">Wrong</th>
+        <th style="border: 5px black;">Points</th>
+    </tr>
+    {% for r in result %}
+    <tr>
+        <td>{{r.date}}</td>
+        <td>{{r.time}} </td>
+        <td>{{r.attends}} </td>
+        <td>{{r.right}} </td>
+        <td>{{r.wront}} </td>
+        <td>{{r.points}} </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

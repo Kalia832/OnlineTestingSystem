@@ -1,0 +1,26 @@
+{% extends "headerandfooter.html"%}
+{% block title %}Contact Us{% endblock %}
+{% block navbutton %}
+    <a class="btn btn-primary" href="{% url 'home:loginView' %}">SignIn</a>
+    <a class="btn btn-primary" href="{% url 'home:registrationForm' %}">SignUp</a>
+{% endblock %}
+{% block content%}
+<div class="row mx-auto p-2 " style="width: 500px;">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+    </div> 
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Comments</label>
+    </div>
+    <a class="btn btn-primary mx-auto" style="width: 60px;margin-top: 5px;" href="#">send</a>
+</div>
+{% endblock %}

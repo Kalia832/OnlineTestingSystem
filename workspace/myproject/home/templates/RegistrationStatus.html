@@ -1,0 +1,20 @@
+{% extends 'headerandfooter.html'%}
+{% block title %}
+{% endblock %}
+{% block content %}
+    {% if userStatus == 1 %}
+        <div class="mx-auto p-2" style="width: 100px;">
+            <h5 class="text-danger">Username alrea exist ,Try Another UserName</h5>
+            <a class="text-light" href="{% url 'home:registrationForm'%}">click Here</a>
+        </div>
+    {% elif userStatus == 2 %}
+        <div class="mx-auto p-2" style="width: 100px;">
+            <h1 class="text-success">Congratulations!!Registration is Successful</h1>
+            <label for="text"><a href="{% url 'home:loginView'%}">Login</a>now</label>
+        </div>
+    {% elif userStatus == 3 %}
+        <div class="mx-auto p-2" style="width: 100px;">
+            <p class="text-danger">OOps!! improper request</p>
+        </div>
+    {% endif %}
+{% endblock %}

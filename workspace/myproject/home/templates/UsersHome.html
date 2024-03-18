@@ -1,0 +1,53 @@
+{% extends "headerandfooter.html" %}
+{% load static %}
+{% block header %}
+<style>
+  body{
+    margin: 10px;
+  }
+</style> {% endblock %}
+{% block title%}TheFresher {% endblock %}
+{% block services %}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      services
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Recharge</a></li>
+      <li><a class="dropdown-item" href="#">TestSerise</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">History Result</a></li>
+    </ul>
+  </li>
+  <li class="nav-item dropdown-center">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Profile
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Account</a></li>
+      <li><a class="dropdown-item" href="#">Resutl History</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">logOut</a></li>
+    </ul>
+  </li>
+{% endblock %}
+{% block navbutton %}
+<a class="btn btn-primary" href="{% url 'home:logOut'%}">logOut</a>
+{% endblock %}
+{% block content %}
+    <div class="mx-auto p-2 ">
+    <h1>Welcome Home ,{{request.session.name}}</h1>
+    </div>
+    <div> 
+      <label for="button"><a href="{% url 'home:testPaper'%}?n=1">testpaper with 1 question</a></label>
+    </div>
+    <div> 
+      <label for="button"><a href="{% url 'home:testPaper'%}?n=3">testpaper with 3 question</a></label>
+    </div>
+    <div> 
+      <label for="button"><a href="{% url 'home:testPaper'%}?n=5">testpaper with 5 question</a></label>
+    </div>
+    <div>
+      <label for="button"><a href="{% url 'home:testHistory'%}">test History</a></label>
+    </div>
+{% endblock %}

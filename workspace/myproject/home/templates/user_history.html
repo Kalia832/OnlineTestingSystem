@@ -1,0 +1,26 @@
+{% extends "headerandfooter.html" %}
+{% block title %}ots-history{% endblock %}
+{% block content %}
+<h1>Your Report Card</h1>
+<p>Hi {{candidate.firstname}}, you have attempted in total {{candidate.testattempted}} tests and you have scored {{candidate.points}}, on the scale of 10 </p>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Attempt</th>
+        <th>Right</th>
+        <th>Wrong</th>
+        <th>Points</th>
+    </tr>
+    {% for r in results %}
+    <tr>
+        <td>{{r.date}}</td>
+        <td>{{r.time}} </td>
+        <td>{{r.attends}} </td>
+        <td>{{r.right}} </td>
+        <td>{{r.wront}} </td>
+        <td>{{r.points}} </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
